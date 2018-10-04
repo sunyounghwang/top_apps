@@ -3,6 +3,7 @@ module TopApps
 
     def run
       puts "Welcome to Top Apps!"
+      list_apps
     end
 
     def list_apps
