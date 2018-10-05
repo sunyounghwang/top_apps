@@ -1,5 +1,4 @@
-module TopApps
-  class CLI
+class TopApps::CLI
 
     def run
       puts "Welcome to Top Apps!"
@@ -7,8 +6,7 @@ module TopApps
     end
 
     def list_apps
-      puts "Here are the top 100 apps in the Apple Store right now:"
+      puts "Here are the top 5 free apps in the Apple Store right now:"
     end
 
-  end
 end
