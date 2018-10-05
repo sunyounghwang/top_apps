@@ -7,4 +7,12 @@ class TopApps::App
    @@all << self
  end
 
+ def create_apps_from_index(index_array)
+   index_array.each { |index_hash| self.new(index_hash) }
+ end
+
+ def add_attributes_from_profile(profile_hash)
+   profile_hash.each { |profile_hash| self.send("#{key}=", value) }
+ end
+
 end
