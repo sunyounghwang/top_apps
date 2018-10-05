@@ -1,6 +1,14 @@
 class TopApps::Scrape
   require "open-uri"
-  #index_url = https://www.apple.com/itunes/charts/
+=begin
+  index_url = "https://www.apple.com/itunes/charts/"
+  index_array = {
+    name:
+    category:
+    rank:
+    profile_url:
+  }
+=end
 
   def self.scrape_index(index_url)
     doc = Nokogiri::HTML(open(index_url))
