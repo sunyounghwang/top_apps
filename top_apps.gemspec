@@ -35,6 +35,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "nokogiri"
-  spec.add_development_dependency "open-uri"
   spec.add_development_dependency "pry"
 end

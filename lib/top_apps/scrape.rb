@@ -1,4 +1,5 @@
 class TopApps::Scrape
+  require "open-uri"
   #index_url = https://www.apple.com/itunes/charts/
 
   def self.scrape_index(index_url)
