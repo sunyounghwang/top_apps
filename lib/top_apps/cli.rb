@@ -4,7 +4,6 @@ class TopApps::CLI
     add_attributes
     greeting
     display_apps
-    puts "#{TopApps::App.all.first.name}"
   end
 
   def create_apps
@@ -15,7 +14,7 @@ class TopApps::CLI
   def add_attributes
     TopApps::App.all.each do |app|
       profile_hash = TopApps::Scrape.scrape_profile(app.profile_url)
-      TopApps::App.add_attributes_from_profile(profile_hash)
+      app.add_attributes_from_profile(profile_hash)
     end
   end
 
