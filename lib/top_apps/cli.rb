@@ -2,7 +2,7 @@ class TopApps::CLI
 
     def run
       greeting
-      list_apps
+      display_apps
     end
 
     def greeting
@@ -11,8 +11,13 @@ class TopApps::CLI
       puts "You can select an app to learn more about it."
     end
 
-    def list_apps
+    def display_apps
       puts "Here are the top 5 free apps in the Apple Store right now:"
+      #iterate over App.all and puts app information, prompt user to select an app by entering a number
+    end
+
+    def display_profile
+      #find selected app in App.all and puts selected app's profile, prompt user to enter "back" or "exit"
     end
 
 end
