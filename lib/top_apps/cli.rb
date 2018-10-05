@@ -1,5 +1,7 @@
 class TopApps::CLI
   def run
+    index_array = TopApps::Scrape.scrape_index("https://www.apple.com/itunes/charts/")
+    TopApps::App.create_apps_from_index(array)
     greeting
     display_apps
     end
