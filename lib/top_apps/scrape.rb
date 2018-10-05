@@ -11,7 +11,6 @@ class TopApps::Scrape
     category: app.css("h4 a").text,
     rank: app.css("strong").text.chomp("."),
     profile_url: app.css("a").attribute("href").value
-  }
 =end
 
   def self.scrape_index(index_url)
@@ -29,6 +28,7 @@ class TopApps::Scrape
       }
       index_array << index_hash
     end
+    index_array
   end
 
   def self.scrape_profile(profile_url)
