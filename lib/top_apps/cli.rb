@@ -1,13 +1,22 @@
 class TopApps::CLI
   def run
     create_apps
+    add_attributes
     greeting
     display_apps
+    puts "#{TopApps::App.all.first.name}"
   end
 
   def create_apps
     index_array = TopApps::Scrape.scrape_index("https://www.apple.com/itunes/charts/")
     TopApps::App.create_apps_from_index(index_array)
+  end
+
+  def add_attributes
+    TopApps::App.all.each do |app|
+      profile_hash = TopApps::Scrape.scrape_profile(app.profile_url)
+      TopApps::App.add_attributes_from_profile(profile_hash)
+    end
   end
 
   def greeting
