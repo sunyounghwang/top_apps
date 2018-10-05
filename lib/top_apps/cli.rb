@@ -1,8 +1,7 @@
 class TopApps::CLI
-
-    def run
-      greeting
-      display_apps
+  def run
+    greeting
+    display_apps
     end
 
     def greeting

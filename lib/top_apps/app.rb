@@ -1,5 +1,5 @@
 class TopApps::App
-  @@all = []
+ @@all = []
  attr_accessor :name, :category, :rank, :profile_url
 
  def initialize(hash)
