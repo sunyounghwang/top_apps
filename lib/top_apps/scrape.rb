@@ -41,10 +41,11 @@ class TopApps::Scrape
   }
 =end
 
-  def self.scrape_profile(profile_url)
+  def self.scrape_profile(profile_url="https://itunes.apple.com/us/app/tomb-of-the-mask/id1057889290?mt=8&v0=WWW-NAUS-ITSTOP100-FREEAPPS&l=en&ign-mpt=uo%3D4")
     doc = Nokogiri::HTML(open(profile_url))
+    binding.pry
     profile_hash = {
-      #description: doc.css("div.we-editor-notes p").attribute("aria-label").value,
+      description: doc.css("div.we-editor-notes p").attribute("aria-label").value,
       developer: doc.css("h2.product-header__identity.app-header__identity a").text,
       rating: doc.css("figcaption.we-rating-count.star-rating__count").text.split(",").first
     }
