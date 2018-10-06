@@ -3,8 +3,7 @@ class TopApps::CLI
     create_apps
     add_attributes
     greeting
-    display_apps
-    display_profile("2")
+    display_apps  
   end
 
   def self.create_apps
@@ -24,6 +23,10 @@ class TopApps::CLI
     puts "Top Apps is a CLI that displays the hottest apps in the Apple Store right now."
     puts "You can select an app to learn more about it."
     puts "\n"
+  end
+
+  def self.quit
+    puts "Thanks for using Top Apps. Goodbye!"
   end
 
   def self.display_apps
