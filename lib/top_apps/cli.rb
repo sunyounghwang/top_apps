@@ -3,7 +3,8 @@ class TopApps::CLI
     create_apps
     add_attributes
     greeting
-    display_apps  
+    display_apps
+    decide_action
   end
 
   def self.create_apps
@@ -25,34 +26,45 @@ class TopApps::CLI
     puts "\n"
   end
 
+  def self.decide_action
+    puts "To learn more about an app, enter its rank (e.g., '1' or '2')."
+    puts "To quit, enter 'quit'."
+    input = gets.strip
+    if input.to_i.between?(1, TopApps::App.all.size)
+      display_profile(input)
+    elsif input == "quit"
+      quit
+    else
+      puts "\n"
+      puts "I'm sorry, I don't understand you."
+      decide_action
+    end
+  end
+
   def self.quit
     puts "Thanks for using Top Apps. Goodbye!"
   end
 
   def self.display_apps
     puts "Here are the top 5 free apps in the Apple Store right now:"
-    #iterate over App.all and puts app information, prompt user to select an app by entering a number
     TopApps::App.all.each do |app|
       puts "#{app.rank}. #{app.name} - #{app.category}"
     end
+    puts "\n"
   end
 
   def self.display_profile(rank)
     #find selected app in App.all and puts selected app's profile, prompt user to enter "back" or "exit"
-    if TopApps::App.all.detect { |app| app.rank == rank }
-      app = TopApps::App.all[rank.to_i - 1]
-      puts "\n"
-      puts "#{app.name}"
-      puts "Ranked ##{app.rank}"
-      puts "Category: #{app.category}"
-      puts "Developer: #{app.developer}"
-      puts "Rated: #{app.rating}"
-      puts "Editor's Notes:"
-      puts "#{app.notes}"
-      puts "\n"
-    else
-      puts "I'm sorry, I don't understand you. Please try again."
-    end
+    app = TopApps::App.all[rank.to_i - 1]
+    puts "\n"
+    puts "#{app.name}"
+    puts "Ranked ##{app.rank}"
+    puts "Category: #{app.category}"
+    puts "Developer: #{app.developer}"
+    puts "Rating: #{app.rating}"
+    puts "Editor's Notes:"
+    puts "#{app.notes}"
+    puts "\n"
   end
 
 end
