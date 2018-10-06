@@ -30,6 +30,7 @@ class TopApps::CLI
     puts "To learn more about an app, enter its rank (e.g., '1' or '2')."
     puts "To quit, enter 'quit'."
     input = gets.strip
+    
     if input.to_i.between?(1, TopApps::App.all.size)
       display_profile(input)
     elsif input == "quit"
@@ -54,7 +55,7 @@ class TopApps::CLI
   end
 
   def self.display_profile(rank)
-    #find selected app in App.all and puts selected app's profile, prompt user to enter "back" or "exit"
+    #prompt user to enter "back" or "exit"
     app = TopApps::App.all[rank.to_i - 1]
     puts "\n"
     puts "#{app.name}"
