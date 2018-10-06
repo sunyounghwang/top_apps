@@ -4,7 +4,6 @@ class TopApps::CLI
     add_attributes
     greeting
     display_apps
-    select_app
   end
 
   def self.create_apps
@@ -42,6 +41,22 @@ class TopApps::CLI
     end
   end
 
+  def self.back_to_apps
+    puts "Do you want to go back to the apps? Y/N"
+    input = gets.strip
+
+    case input
+    when "Y"
+      display_apps
+    when "N"
+      ""
+    else
+      puts "\n"
+      puts "I'm sorry, I don't understand you."
+      back_to_apps
+    end
+  end
+
   def self.quit
     puts "Thanks for using Top Apps. Goodbye!"
   end
@@ -52,6 +67,7 @@ class TopApps::CLI
       puts "#{app.rank}. #{app.name} - #{app.category}"
     end
     puts "\n"
+    select_app
   end
 
   def self.display_profile(rank)
@@ -66,6 +82,7 @@ class TopApps::CLI
     puts "Editor's Notes:"
     puts "#{app.notes}"
     puts "\n"
+    back_to_apps
   end
 
 end
