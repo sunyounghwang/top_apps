@@ -43,9 +43,11 @@ class TopApps::Scrape
 
   def self.scrape_profile(profile_url)
     doc = Nokogiri::HTML(open(profile_url))
+    notes = doc.css("div.we-editor-notes.lockup.ember-view p").text.strip
+    notes == "" ? notes = "Notes unavailable." :
 
     profile_hash = {
-      notes: doc.css("div.we-editor-notes.lockup.ember-view p").text.strip,
+      notes: notes,
       developer: doc.css("h2.product-header__identity.app-header__identity a").text,
       rating: doc.css("figcaption.we-rating-count.star-rating__count").text.split(",").first
     }
