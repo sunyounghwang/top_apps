@@ -4,7 +4,7 @@ class TopApps::CLI
     add_attributes
     greeting
     display_apps
-    decide_action
+    select_app
   end
 
   def self.create_apps
@@ -26,11 +26,11 @@ class TopApps::CLI
     puts "\n"
   end
 
-  def self.decide_action
+  def self.select_app
     puts "To learn more about an app, enter its rank (e.g., '1' or '2')."
     puts "To quit, enter 'quit'."
     input = gets.strip
-    
+
     if input.to_i.between?(1, TopApps::App.all.size)
       display_profile(input)
     elsif input == "quit"
@@ -38,7 +38,7 @@ class TopApps::CLI
     else
       puts "\n"
       puts "I'm sorry, I don't understand you."
-      decide_action
+      select_app
     end
   end
 
