@@ -44,7 +44,7 @@ class TopApps::Scrape
   def self.scrape_profile(profile_url)
     doc = Nokogiri::HTML(open(profile_url))
     notes = doc.css("div.we-editor-notes.lockup.ember-view p").text.strip
-    notes == "" ? notes = "Notes unavailable." :
+    notes == "" ? notes = "Unavailable." : nil
 
     profile_hash = {
       notes: notes,

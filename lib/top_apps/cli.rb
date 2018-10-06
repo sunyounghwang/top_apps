@@ -4,6 +4,7 @@ class TopApps::CLI
     add_attributes
     greeting
     display_apps
+    display_profile("2")
   end
 
   def self.create_apps
