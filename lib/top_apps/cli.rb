@@ -4,9 +4,6 @@ class TopApps::CLI
     add_attributes
     greeting
     display_apps
-    binding.pry
-    puts "#{TopApps::App.all.first.rank}"
-    puts "#{TopApps::App.all.first.description}"
   end
 
   def self.create_apps

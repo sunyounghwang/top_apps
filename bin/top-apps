@@ -2,4 +2,4 @@
 
 require "./lib/top_apps"
 
-TopApps::CLI.new.run
+TopApps::CLI.run

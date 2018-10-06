@@ -1,6 +1,6 @@
 class TopApps::App
  @@all = []
- attr_accessor :name, :category, :rank, :profile_url, :description, :developer, :rating
+ attr_accessor :name, :category, :rank, :profile_url, :notes, :developer, :rating
 
  def self.create_apps_from_index(index_array)  #index array returned by #scrape_index
    index_array.each { |index_hash| self.new(index_hash) }
