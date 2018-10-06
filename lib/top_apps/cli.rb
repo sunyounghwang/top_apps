@@ -33,8 +33,22 @@ class TopApps::CLI
     end
   end
 
-  def self.display_profile
+  def self.display_profile(rank)
     #find selected app in App.all and puts selected app's profile, prompt user to enter "back" or "exit"
+    if TopApps::App.all.detect { |app| app.rank == rank }
+      app = TopApps::App.all[rank.to_i - 1]
+      puts "\n"
+      puts "#{app.name}"
+      puts "Ranked ##{app.rank}"
+      puts "Category: #{app.category}"
+      puts "Developer: #{app.developer}"
+      puts "Rated: #{app.rating}"
+      puts "Editor's Notes:"
+      puts "#{app.notes}"
+      puts "\n"
+    else
+      puts "I'm sorry, I don't understand you. Please try again."
+    end
   end
 
 end
