@@ -4,6 +4,7 @@ class TopApps::CLI
     add_attributes
     greeting
     display_apps
+    puts "#{TopApps::App.all.first.description}"
   end
 
   def create_apps
