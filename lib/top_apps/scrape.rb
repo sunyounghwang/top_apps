@@ -30,5 +30,4 @@ class TopApps::Scrape
       rating: doc.css("figcaption.we-rating-count.star-rating__count").text.split(",").first
     }
   end
-
 end

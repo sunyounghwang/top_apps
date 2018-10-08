@@ -18,5 +18,4 @@ class TopApps::App
  def add_attributes_from_profile(profile_hash)
    profile_hash.each { |key, value| send("#{key}=", value) }
  end
-
 end

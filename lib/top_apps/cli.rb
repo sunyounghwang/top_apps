@@ -84,5 +84,4 @@ class TopApps::CLI
       back_to_apps
     end
   end
-
 end
