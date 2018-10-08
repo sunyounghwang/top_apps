@@ -24,6 +24,16 @@ class TopApps::CLI
     puts "You can select an app to learn more about it."
   end
 
+  def self.display_apps
+    puts "\n"
+    puts "Here are the top 5 free apps in the Apple Store right now:"
+    TopApps::App.all.each do |app|
+      puts "#{app.rank}. #{app.name} - #{app.category}"
+    end
+    puts "\n"
+    select_app
+  end
+
   def self.select_app
     puts "To learn more about an app, enter its rank."
     puts "To quit, enter 'quit'."
@@ -40,35 +50,9 @@ class TopApps::CLI
     end
   end
 
-  def self.back_to_apps
-    puts "If you want to go back to the apps, enter 'back', if you want to quit, enter 'quit'."
-    input = gets.strip
-
-    case input
-    when "back"
-      display_apps
-    when "quit"
-      quit
-    else
-      puts "\n"
-      puts "I'm sorry, I don't understand you."
-      back_to_apps
-    end
-  end
-
   def self.quit
     puts "\n"
     puts "Thanks for using Top Apps. Goodbye!"
-  end
-
-  def self.display_apps
-    puts "\n"
-    puts "Here are the top 5 free apps in the Apple Store right now:"
-    TopApps::App.all.each do |app|
-      puts "#{app.rank}. #{app.name} - #{app.category}"
-    end
-    puts "\n"
-    select_app
   end
 
   def self.display_profile(rank)
@@ -83,6 +67,22 @@ class TopApps::CLI
     puts "#{app.notes}"
     puts "\n"
     back_to_apps
+  end
+
+  def self.back_to_apps
+    puts "If you want to go back to the apps, enter 'back', if you want to quit, enter 'quit'."
+    input = gets.strip
+
+    case input
+    when "back"
+      display_apps
+    when "quit"
+      quit
+    else
+      puts "\n"
+      puts "I'm sorry, I don't understand you."
+      back_to_apps
+    end
   end
 
 end
