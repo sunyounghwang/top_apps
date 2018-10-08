@@ -1,8 +1,7 @@
 # TopApps
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/top_apps`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to Top Apps! Top Apps is a basic CLI that lists the current top 5 free apps on Apple's iTunes Chart.
+From the list view, you can select an app to view a brief profile that includes overall rank, category, rating, and editor's notes if the app is an Editor's Choice selection.
 
 ## Installation
 

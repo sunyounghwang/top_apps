@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'Sunyoung Hwang'"]
   spec.email         = ["'sunyounghwang13@gmail.com'"]
 
-  spec.summary       = %q{Top Apps CLI displays the top Apple Store apps}
-  spec.description   = %q{Top Apps dipslays apps and a brief profile}
+  spec.summary       = %q{Top Apps displays the top 5 free apps on Apple's iTunes Chart.}
+  spec.description   = %q{Top Apps is a CLI that lists the current top 5 free apps on Apple's iTunes Chart and allows you to learn more about them.}
   spec.homepage      = "https://github.com/sunyounghwang/top_apps"
   spec.license       = "MIT"
 
