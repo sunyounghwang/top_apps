@@ -30,11 +30,11 @@ class TopApps::CLI
     TopApps::App.all.each do |app|
       puts "#{app.rank}. #{app.name} - #{app.category}"
     end
-    puts "\n"
     select_app
   end
 
   def self.select_app
+    puts "\n"
     puts "To learn more about an app, enter its rank."
     puts "To quit, enter 'quit'."
     input = gets.strip
@@ -44,8 +44,7 @@ class TopApps::CLI
     elsif input == "quit"
       quit
     else
-      puts "\n"
-      puts "I'm sorry, I don't understand you."
+      sorry
       select_app
     end
   end
@@ -53,6 +52,12 @@ class TopApps::CLI
   def self.quit
     puts "\n"
     puts "Thanks for using Top Apps. Goodbye!"
+    exit
+  end
+
+  def self.sorry
+    puts "\n"
+    puts "I'm sorry, I don't understand you."
   end
 
   def self.display_profile(rank)
@@ -65,11 +70,11 @@ class TopApps::CLI
     puts "Rating: #{app.rating}"
     puts "Editor's Notes:"
     puts "#{app.notes}"
-    puts "\n"
     back_to_apps
   end
 
   def self.back_to_apps
+    puts "\n"
     puts "If you want to go back to the apps, enter 'back', if you want to quit, enter 'quit'."
     input = gets.strip
 
@@ -79,8 +84,7 @@ class TopApps::CLI
     when "quit"
       quit
     else
-      puts "\n"
-      puts "I'm sorry, I don't understand you."
+      sorry
       back_to_apps
     end
   end
