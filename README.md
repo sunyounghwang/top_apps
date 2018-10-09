@@ -39,4 +39,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the TopApps project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'sunyounghwang'/top_apps/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the TopApps project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/version/1/4/code-of-conduct.md).
