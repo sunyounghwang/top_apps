@@ -4,24 +4,14 @@ Welcome to Top Apps! Top Apps is a basic CLI that lists the current top 5 free a
 From the list view, you can select an app to view a brief profile that includes overall rank, category, rating, and editor's notes if the app is an Editor's Choice selection.
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'top_apps'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Enter the following command.
 
     $ gem install top_apps
 
 ## Usage
+Enter the following command and follow the on-screen instructions.
 
-TODO: Write usage instructions here
+    $ top-apps
 
 ## Development
 
