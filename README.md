@@ -36,7 +36,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/'sunyo
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the TopApps project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [Contributor Covenant code of conduct](https://www.contributor-covenant.org/version/1/4/code-of-conduct.md).
