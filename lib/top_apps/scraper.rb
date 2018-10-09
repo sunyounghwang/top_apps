@@ -1,4 +1,4 @@
-class TopApps::Scrape
+class TopApps::Scraper
   require "open-uri"
 
   def self.scrape_index(index_url)

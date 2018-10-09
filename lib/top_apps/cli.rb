@@ -7,13 +7,13 @@ class TopApps::CLI
   end
 
   def self.create_apps
-    index_array = TopApps::Scrape.scrape_index("https://www.apple.com/itunes/charts/")
+    index_array = TopApps::Scraper.scrape_index("https://www.apple.com/itunes/charts/")
     TopApps::App.create_apps_from_index(index_array)
   end
 
   def self.add_attributes
     TopApps::App.all.each do |app|
-      profile_hash = TopApps::Scrape.scrape_profile(app.profile_url)
+      profile_hash = TopApps::Scraper.scrape_profile(app.profile_url)
       app.add_attributes_from_profile(profile_hash)
     end
   end

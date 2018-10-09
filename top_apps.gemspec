@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
       "public gem pushes."
   end
 
-  spec.files         = ["lib/top_apps.rb", "lib/top_apps/app.rb", "lib/top_apps/cli.rb", "lib/top_apps/scrape.rb", "lib/top_apps/version.rb"]
+  spec.files         = ["lib/top_apps.rb", "lib/top_apps/app.rb", "lib/top_apps/cli.rb", "lib/top_apps/scraper.rb", "lib/top_apps/version.rb"]
   spec.executables   << "top-apps"
   spec.require_paths = ["lib"]
 
