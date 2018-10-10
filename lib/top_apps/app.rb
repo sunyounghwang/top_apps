@@ -10,6 +10,10 @@ class TopApps::App
    @@all
  end
 
+ def self.find_by_rank(rank)
+   all[rank.to_i - 1]
+ end
+
  def initialize(hash)
    hash.each { |attr_key, attr_value| send("#{attr_key}=", attr_value) }
    @@all << self

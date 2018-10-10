@@ -61,7 +61,7 @@ class TopApps::CLI
   end
 
   def self.display_profile(rank)
-    app = TopApps::App.all[rank.to_i - 1]
+    app = TopApps::App.find_by_rank(rank)
     puts "\n"
     puts "#{app.name}"
     puts "Ranked ##{app.rank}"
