@@ -5,8 +5,8 @@ class TopApps::Scraper
     doc = Nokogiri::HTML(open(index_url))
     free_apps_section = doc.css(".section.chart-grid.apps div.section-content").first
     free_apps_list = free_apps_section.css("li")
-    
-    free_apps_list.collect do |app|
+
+    free_apps_list.map do |app|
       {
         name: app.css("h3 a").text,
         category: app.css("h4 a").text,
