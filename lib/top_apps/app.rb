@@ -11,11 +11,11 @@ class TopApps::App
  end
 
  def initialize(hash)
-   hash.each { |key, value| send("#{attr_key}=", attr_value) }
+   hash.each { |attr_key, attr_value| send("#{attr_key}=", attr_value) }
    @@all << self
  end
 
  def add_attributes_from_profile(profile_hash)
-   profile_hash.each { |key, value| send("#{attr_key}=", attr_value) }
+   profile_hash.each { |attr_key, attr_value| send("#{attr_key}=", attr_value) }
  end
 end
