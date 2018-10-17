@@ -1,6 +1,4 @@
 class TopApps::Scraper
-  require "open-uri"
-
   def self.scrape_index(index_url)
     doc = Nokogiri::HTML(open(index_url))
     free_apps_section = doc.css(".section.chart-grid.apps div.section-content").first
