@@ -1,7 +1,6 @@
 class TopApps::CLI
   def self.run
     create_apps
-    add_attributes
     greeting
     display_apps
   end
@@ -11,11 +10,9 @@ class TopApps::CLI
     TopApps::App.create_apps_from_index(index_array)
   end
 
-  def self.add_attributes
-    TopApps::App.all.each do |app|
-      profile_hash = TopApps::Scraper.scrape_profile(app.profile_url)
-      app.add_attributes_from_profile(profile_hash)
-    end
+  def self.add_attributes(app)
+    profile_hash = TopApps::Scraper.scrape_profile(app.profile_url)
+    app.add_attributes_from_profile(profile_hash)
   end
 
   def self.greeting
@@ -26,7 +23,7 @@ class TopApps::CLI
 
   def self.display_apps
     puts "\n"
-    puts "Here are the top 5 free apps in the Apple Store right now:"
+    puts "Here are the top #{TopApps::App.all.size} free apps in the Apple Store right now:"
     TopApps::App.all.each do |app|
       puts "#{app.rank}. #{app.name} - #{app.category}"
     end
@@ -37,9 +34,11 @@ class TopApps::CLI
     puts "\n"
     puts "To learn more about an app, enter its rank."
     puts "To quit, enter 'quit'."
-    input = gets.strip
+    input = gets.strip.downcase
 
     if input.to_i.between?(1, TopApps::App.all.size)
+      app = TopApps::App.find_by_rank(input)
+      add_attributes(app) if !app.developer
       display_profile(input)
     elsif input == "quit"
       quit
@@ -76,7 +75,7 @@ class TopApps::CLI
   def self.back_to_apps
     puts "\n"
     puts "If you want to go back to the apps, enter 'back', if you want to quit, enter 'quit'."
-    input = gets.strip
+    input = gets.strip.downcase
 
     case input
     when "back"
