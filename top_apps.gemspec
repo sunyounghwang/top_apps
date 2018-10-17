@@ -13,7 +13,6 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Top Apps is a CLI that lists the current top 5 free apps on Apple's iTunes Chart and allows you to learn more about them.}
   spec.homepage      = "https://github.com/sunyounghwang/top_apps"
   spec.license       = "MIT"
-  end
 
   spec.files         = ["lib/top_apps.rb", "lib/top_apps/app.rb", "lib/top_apps/cli.rb", "lib/top_apps/scraper.rb", "lib/top_apps/version.rb"]
   spec.executables   << "top-apps"
